@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        android:layout_weight="0.5"
+        android:background="#2B2B2B"
+        android:paddingLeft="5dp"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/testTerminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="网络请求测试"
+            android:textColor="#BBBBBB" />
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/processGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestConf1"
+                android:text="testRequestConf1 Gzip请求"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestConf2"
+                android:text="testRequestConf2 非Gzip请求，请求参数同1"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestConf3"
+                android:text="testRequestConf3 Gzip请求，请求参数为null"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestConf4"
+                android:text="testRequestConf4 非Gzip请求，请求参数为null"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestConf5"
+                android:text="testRequestConf5 url为空"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestConf6"
+                android:text="testRequestConf6 URL包含参数 Gzip请求"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestConf7"
+                android:text="testRequestConf7 URL包含参数 非Gzip请求"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="testRequestCustomConf"
+                android:text="testRequestCustomConf 自定义配置请求"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

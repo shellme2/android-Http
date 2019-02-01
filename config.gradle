@@ -1,0 +1,27 @@
+ext {
+    BUILD_BRANCH_NAME='develop'
+
+    // 名称中以“-beta”结尾将会上传到maven快照仓库中，去掉即可上传到正式发布仓库
+    // 上次正式版本：
+    // 上次beta版本号：
+    // 上次bugfix版本号：4.0.3-bugfix
+    VERSION_NAME = '5.0.0'
+    // 配置demo以及所有sdk的版本Code值
+    VERSION_CODE = 9
+
+    android = [
+            applicationId: "com.example.http",
+    ]
+
+    dependencies = [
+            // sdk
+            "volley"           : 'com.mcxiaoke.volley:library:1.0.19',
+
+            // demo
+            "bfc-sequencetools": 'com.eebbk.bfc:bfc-sequencetools-json:0.5.1-beta',
+            "bfc-http"         : 'com.eebbk.bfc:bfc-http:0.9.3',
+
+            // test
+            "junit"            : 'junit:junit:4.12',
+    ]
+}

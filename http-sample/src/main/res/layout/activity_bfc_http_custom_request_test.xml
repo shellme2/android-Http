@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/requestUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="url"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/requestParams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="params"
+        android:maxLines="4"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/requestTypeGet"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/requestTypeGet"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GET"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/requestTypePost"
+            android:layout_width="0.0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="POST"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="runCustomRequest"
+        android:text="运行runCustomRequest"
+        android:textSize="12sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="runCustomConfRequest"
+        android:text="运行runCustomConfRequest"
+        android:textSize="12sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="cancel"
+        android:text="取消请求"
+        android:textSize="12sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2B2B2B"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/testTerminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="网络请求测试"
+            android:textColor="#BBBBBB" />
+    </ScrollView>
+</LinearLayout>

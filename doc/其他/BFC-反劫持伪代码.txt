@@ -1,0 +1,66 @@
+//1. 检查是否存在缓存ip
+// 1.1 存在
+// 2. 替换ip访问数据
+// 2.1 访问成功
+// END
+// 2.2 访问失败
+// 3. 使用原域名访问
+// 3.1 访问成功
+// END
+// 3.2 访问失败
+// 4. 检查网络
+// 4.1 网络异常
+// END ERROR
+// 4.2 网络正常
+// 5. httpDNS 请求
+// 5.1 请求失败
+// END ERROR
+// 5.2 请求成功
+// 6. 替换IP访问数据
+// 6.1 访问成功
+// 缓存IP
+// END
+// 6.2 访问失败
+// END ERROR
+// 1.2 不存在
+// 3. 使用原域名访问
+// ...
+
+
+if(检查缓存IP存在){
+    重新构造url(缓存IP);
+    第一次访问网络;
+    onSuccess(){
+        END callBack;
+    }
+    onFail(){
+        继续执行接下来的操作;
+    }
+}
+重置url(使用域名访问)
+第二次访问网络;
+onSuccess(){
+    END callBack;
+}
+onFail(){
+    检查网络状态;
+    正常;
+        第三次访问网络(请求最优IP而非数据访问)
+        执行httpDNS获取IP;
+        onSuccess(){
+            重新构造url(httpDNS 得到的IP);
+            第五次访问网络;
+            onSuccess(){
+                缓存IP;
+                END callBack;
+            }
+            onFail(){
+                END ERROR;
+            }
+        }
+        onFail(){
+            END ERROR;
+        }
+    异常;
+            END ERROR;
+}

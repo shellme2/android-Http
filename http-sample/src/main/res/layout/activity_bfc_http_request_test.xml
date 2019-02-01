@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="terminalMsg"
+            type="com.example.http.bean.TerminalMsg" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="0.0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/processGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ToggleButton
+                    android:id="@+id/http_toggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textOff="普通网络请求"
+                    android:textOn="反劫持网络请求"
+                    android:textSize="12sp" />
+
+                <ToggleButton
+                    android:id="@+id/cache_toggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textOff="禁止缓存"
+                    android:textOn="允许缓存"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="设置超时时长，默认2500，不得小于1000"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/timeOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="2500"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setTimeOut"
+                    android:text="设置超时时长"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processGet"
+                    android:text="GET请求"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processGetWithParam"
+                    android:text="GET请求（URL包含参数）"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processPost"
+                    android:text="POST请求"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processPut"
+                    android:text="PUT请求"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processDelete"
+                    android:text="DELETE请求"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processFakeGet"
+                    android:text="外网GET请求"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="clearPreferences"
+                    android:text="清除缓存IP"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/noStopCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="循环次数"
+                    android:inputType="number" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processNoStopGet"
+                    android:text="GET无限循环"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="processNoStopPost"
+                    android:text="POST无限循环"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="stopRequest"
+                    android:text="停止无限循环请求"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="clearAllCache"
+                    android:text="清除全部URL缓存"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/cacheExpireTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="缓存有效时长"
+                    android:inputType="number" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="clearUrlCache"
+                    android:text="清除特定URL缓存"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="getCacheDir"
+                    android:text="获取缓存目录"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="0.0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="#2B2B2B"
+            android:paddingLeft="5dp"
+            android:scrollbars="none">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{terminalMsg.msg}"
+                android:textColor="#BBBBBB" />
+        </ScrollView>
+    </LinearLayout>
+</layout>
