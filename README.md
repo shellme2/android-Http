@@ -5,7 +5,7 @@
 
 **生命在于折腾（各版本升级，可能存在较大改动，使用前请尽可能查看最新Readme文档的[版本更新日志](#update-list)及[使用说明](#using)）**
 
-**附 RTX：20252365**
+
 # Design
 * [框架设计](http://172.28.2.93/bfc/BfcHttp/raw//doc/screenshots/structure_design.png)
 * [详细设计](http://172.28.2.93/bfc/BfcHttp/raw//doc/screenshots/inteface_design.png)
